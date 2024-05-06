@@ -14,19 +14,26 @@ export default function Home() {
             bg-gray-200 sm:bg-red-100
             md:bg-green-100 lg:bg-cyan-100
             xl:bg-orange-100 2xl:bg-purple-100
-            pl-5 ring ring-offset-2
-            outline-none ring-transparent
-           focus:ring-orange-500 transition-shadow
-           placeholder:drop-shadow"
-          type="text"
-          placeholder="Search here"
+            pl-5 ring ring-offset-2 outline-none
+            ring-transparent invalid:focus:ring-orange-500
+            transition-shadow placeholder:drop-shadow
+            peer"
+          type="email"
+          required
+          placeholder="Email address"
         ></input>
+        <span
+          className="text-red-500 font-medium hidden
+          peer-invalid:block"
+        >
+          Email is required
+        </span>
         <button
           className="bg-black bg-opacity-80
           text-white py-2 rounded-full
           active:scale-90 transition-transform
           font-medium focus:scale-90 outline-none
-          md:px-5"
+          md:px-5 peer-invalid:bg-gray-400"
         >
           Search
         </button>
