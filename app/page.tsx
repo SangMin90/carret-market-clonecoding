@@ -1,37 +1,28 @@
 export default function Home() {
   return (
-    <main className="bg-gray-300 h-screen flex items-center justify-center p-5 dark:bg-gray-700">
-      <div className="bg-white shadow-lg p-5 rounded-2xl w-full dark:bg-gray-600">
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col">
-            <span className="text-gray-500 font-semibold -mb-1 dark:text-gray-300">
-              In transit
-            </span>
-            <span className="text-4xl font-semibold dark:text-white">
-              Coolblue
-            </span>
-          </div>
-          <div className="size-12 bg-orange-400 rounded-full" />
-        </div>
-        <div className="my-2 flex items-center gap-2">
-          <span
-            className="bg-green-400 text-white uppercase px-2.5 py-1.5 transition
-          text-xs font-medium rounded-full hover:bg-green-500 hover:scale-125"
-          >
-            today
-          </span>
-          <span className="text-gray-300">9:30-10:30</span>
-        </div>
-        <div className="relative">
-          <div className="bg-gray-200 w-full h-2 absolute" />
-          <div className="bg-green-400 w-2/3 h-2 absolute" />
-        </div>
-        <div className="flex justify-between items-center mt-5 text-gray-600 dark:text-gray-400">
-          <span>Expected</span>
-          <span>Sorting center</span>
-          <span>In transit</span>
-          <span className="text-gray-500">Delivered</span>
-        </div>
+    <main className="bg-gray-300 h-screen flex items-center justify-center p-5">
+      <div
+        className="bg-white shadow-lg p-5
+      rounded-3xl w-full max-w-screen-sm flex
+      flex-col gap-2"
+      >
+        <input
+          className="w-full rounded-full h-10
+          bg-gray-200 pl-5 ring ring-offset-2
+            outline-none ring-transparent
+           focus:ring-orange-500 transition-shadow
+           placeholder:drop-shadow"
+          type="text"
+          placeholder="Search here"
+        ></input>
+        <button
+          className="bg-black bg-opacity-80 text-white py-2
+        rounded-full active:scale-90
+        transition-transform font-medium
+        focus:scale-90 outline-none"
+        >
+          Search
+        </button>
       </div>
     </main>
   );
