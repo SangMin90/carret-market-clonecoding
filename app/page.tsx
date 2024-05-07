@@ -7,38 +7,31 @@ export default function Home() {
       <div
         className="bg-white shadow-lg p-5
       rounded-3xl w-full max-w-screen-sm flex
-      flex-col md:flex-row gap-2 *:outline-none
-      ring ring-transparent transition-shadow
-      has-[:invalid]:ring-red-300"
+      flex-col gap-4"
       >
-        <input
-          className="w-full rounded-full h-10
-            bg-gray-200 sm:bg-red-100
-            md:bg-green-100 lg:bg-cyan-100
-            xl:bg-orange-100 2xl:bg-purple-100
-            pl-5 ring ring-offset-2 ring-transparent
-            invalid:focus:ring-orange-500
-            transition-shadow placeholder:drop-shadow
-            peer"
-          type="email"
-          required
-          placeholder="Email address"
-        ></input>
-        <span
-          className="text-red-500 font-medium hidden
-          peer-invalid:block"
-        >
-          Email is required
-        </span>
-        <button
-          className="bg-black bg-opacity-80
-          text-white py-2 rounded-full
-          active:scale-90 transition-transform
-          font-medium focus:scale-90 md:px-5
-          peer-invalid:bg-gray-400"
-        >
-          Search
-        </button>
+        {["Nico", "Me", "You", "Yourself", ""].map((person, index) => (
+          <div key={index} className="flex items-center gap-5">
+            <div className="size-10 bg-blue-400 rounded-full" />
+            <span
+              className="text-lg font-medium empty:bg-gray-300
+            empty:h-5 empty:w-20 empty:animate-pulse"
+            >
+              {person}
+            </span>
+            <div
+              className="size-6 bg-red-500 rounded-full
+                text-white flex items-center justify-center
+                relative"
+            >
+              <span className="z-10">{index}</span>
+              <div
+                className="size-6 bg-red-500 rounded-full
+                text-white flex items-center justify-center
+                absolute animate-ping"
+              ></div>
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );
