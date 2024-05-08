@@ -9,29 +9,13 @@ export default function Home() {
       rounded-3xl w-full max-w-screen-sm flex
       flex-col gap-4"
       >
-        {["Nico", "Me", "You", "Yourself", ""].map((person, index) => (
-          <div key={index} className="flex items-center gap-5 group">
-            <div className="size-10 bg-blue-400 rounded-full" />
-            <span
-              className="text-lg font-medium empty:bg-gray-300
-            empty:h-5 empty:w-20 empty:animate-pulse group-hover:text-red-500"
-            >
-              {person}
-            </span>
-            <div
-              className="size-6 bg-red-500 rounded-full
-                text-white flex items-center justify-center
-                relative"
-            >
-              <span className="z-10">{index}</span>
-              <div
-                className="size-6 bg-red-500 rounded-full
-                text-white flex items-center justify-center
-                absolute animate-ping"
-              ></div>
-            </div>
-          </div>
-        ))}
+        <button
+          className="w-full bg-black
+        h-10 text-white rounded-sexy-name
+        me-tomato"
+        >
+          Submit
+        </button>
       </div>
     </main>
   );
