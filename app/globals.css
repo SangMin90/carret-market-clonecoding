@@ -17,7 +17,7 @@
 @layer components {
   .primary-btn {
     @apply w-full bg-orange-500
-    font-semibold rounded-md
+    font-medium rounded-md
     hover:bg-orange-400 text-center
     transition-colors text-white;
   }

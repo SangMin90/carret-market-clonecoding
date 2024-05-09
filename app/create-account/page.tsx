@@ -18,7 +18,7 @@ export default function CreateAccount() {
         <h1 className="text-2xl">안녕하세요!</h1>
         <h2 className="text-xl">Fill in the form below to join!</h2>
       </div>
-      <form>
+      <form className="flex flex-col gap-3">
         <div className="flex flex-col gap-2">
           <FormInput type="text" placeholder="Username" required errors={[]} />
           <FormInput type="email" placeholder="Email" required errors={[]} />
