@@ -15,9 +15,10 @@
 }
 
 @layer components {
-  .btn {
-    @apply w-full bg-black
-    h-10 text-white rounded-sexy-name
-    me-tomato;
+  .primary-btn {
+    @apply w-full bg-orange-500
+    font-semibold rounded-md
+    hover:bg-orange-400 text-center
+    transition-colors text-white;
   }
 }
