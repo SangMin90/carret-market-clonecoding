@@ -1,14 +1,15 @@
+"use client";
+
 import {} from "@heroicons/react/16/solid";
 import {} from "@heroicons/react/24/outline";
 import FormInput from "../../components/form-input";
 import FormButton from "../../components/form-button";
 import SocialLogin from "../../components/social-login";
+import { useFormState } from "react-dom";
+import handleForm from "./action";
 
 export default function Login() {
-  async function handleForm() {
-    "use server";
-    await new Promise((resolve) => setTimeout(resolve, 5000));
-  }
+  const [state, action] = useFormState(handleForm, null);
   return (
     <div
       className="flex flex-col gap-10
@@ -21,7 +22,7 @@ export default function Login() {
         <h1 className="text-2xl">안녕하세요!</h1>
         <h2 className="text-xl">Log in with email and password.</h2>
       </div>
-      <form action={handleForm} className="flex flex-col gap-3">
+      <form action={action} className="flex flex-col gap-3">
         <div className="flex flex-col gap-2">
           <FormInput
             name="email"
@@ -35,7 +36,7 @@ export default function Login() {
             type="password"
             placeholder="Password"
             required
-            errors={[]}
+            errors={state?.errors ?? []}
           />
         </div>
         <FormButton text="Log in" />
