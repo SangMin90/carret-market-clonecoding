@@ -1,3 +1,5 @@
+"use client";
+
 import {} from "@heroicons/react/16/solid";
 import {} from "@heroicons/react/24/outline";
 import FormInput from "../../components/form-input";
@@ -5,6 +7,17 @@ import FormButton from "../../components/form-button";
 import SocialLogin from "../../components/social-login";
 
 export default function Login() {
+  const onClick = async () => {
+    const response = await fetch("/api/users", {
+      method: "POST",
+      body: JSON.stringify({
+        id: "test",
+        password: "1234",
+      }),
+    });
+
+    console.log(await response.json());
+  };
   return (
     <div
       className="flex flex-col gap-10
@@ -27,8 +40,10 @@ export default function Login() {
             errors={[]}
           />
         </div>
-        <FormButton loading={false} text="Create account" />
       </form>
+      <span onClick={onClick}>
+        <FormButton loading={false} text="Log in" />
+      </span>
       <SocialLogin />
     </div>
   );
