@@ -7,7 +7,7 @@ import SocialLogin from "../../components/social-login";
 export default function Login() {
   async function handleForm() {
     "use server";
-    console.log("this server action");
+    await new Promise((resolve) => setTimeout(resolve, 5000));
   }
   return (
     <div
@@ -38,7 +38,7 @@ export default function Login() {
             errors={[]}
           />
         </div>
-        <FormButton loading={false} text="Log in" />
+        <FormButton text="Log in" />
       </form>
       <SocialLogin />
     </div>
