@@ -2,9 +2,9 @@
 
 import {} from "@heroicons/react/16/solid";
 import {} from "@heroicons/react/24/outline";
-import FormInput from "../../components/form-input";
-import FormButton from "../../components/form-button";
-import SocialLogin from "../../components/social-login";
+import Input from "@/components/input";
+import Button from "@/components/button";
+import SocialLogin from "@/components/social-login";
 import { useFormState } from "react-dom";
 import handleForm from "./action";
 
@@ -24,14 +24,14 @@ export default function Login() {
       </div>
       <form action={action} className="flex flex-col gap-3">
         <div className="flex flex-col gap-2">
-          <FormInput
+          <Input
             name="email"
             type="email"
             placeholder="Email"
             required
             errors={[]}
           />
-          <FormInput
+          <Input
             name="password"
             type="password"
             placeholder="Password"
@@ -39,7 +39,7 @@ export default function Login() {
             errors={state?.errors ?? []}
           />
         </div>
-        <FormButton text="Log in" />
+        <Button text="Log in" />
       </form>
       <SocialLogin />
     </div>
